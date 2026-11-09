@@ -1,0 +1,70 @@
+/* BaySimChip (R Shiny) - small additions to the bslib theme */
+
+body { background: #f9f9f7; }
+
+.card { margin-bottom: 1rem; }
+.card-header { font-weight: 600; }
+
+/* legend under the model diagram */
+.bsc-legend {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 4px 14px; font-size: 0.8rem; color: #52514e; margin-top: 6px;
+}
+.bsc-swatch {
+  display: inline-block; width: 18px; height: 12px; border-radius: 3px;
+  margin-right: 4px; vertical-align: middle;
+}
+.bsc-swatch-fluid { background: #2a78d6; border: 1.5px solid #1c5cab; }
+.bsc-swatch-solid { background: #c3c2b7; border: 1.5px dashed #52514e; border-radius: 1px; }
+.bsc-line {
+  display: inline-block; width: 26px; height: 0; margin-right: 6px;
+  vertical-align: middle; position: relative;
+}
+.bsc-line-flow { border-top: 2px solid #1c5cab; }
+.bsc-line-flow::after {
+  content: ""; position: absolute; right: -3px; top: -5px;
+  border-left: 7px solid #1c5cab; border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+}
+.bsc-line-perm { border-top: 3px dashed #52514e; }
+
+/* compact file inputs placed next to buttons */
+.bsc-inline-file .form-group, .bsc-inline-file .shiny-input-container { margin-bottom: 0; }
+.bsc-inline-file .input-group { flex-wrap: nowrap; }
+.bsc-inline-file .btn { padding: 0.25rem 0.5rem; font-size: 0.82rem; }
+.bsc-inline-file .form-control { font-size: 0.82rem; padding: 0.25rem 0.5rem; }
+
+/* tables */
+table.dataTable td, table.dataTable th { font-size: 0.84rem; }
+table.dataTable tbody tr.selected > * { box-shadow: inset 0 0 0 9999px rgba(42, 120, 214, 0.18) !important; color: inherit !important; }
+
+/* project badge in the navbar */
+.bsc-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: #52514e; padding: 2px 10px;
+  border: 1px solid rgba(11, 11, 11, 0.12); border-radius: 999px; background: #ffffff;
+}
+
+.bsc-import { background: #fcfcfb; }
+
+/* drag-and-drop model editor */
+.bsc-toolbar { margin-bottom: 4px; }
+.bsc-toolbar .btn { white-space: nowrap; }
+.bsc-status {
+  min-height: 1.4em; color: #1c5cab; font-weight: 500; visibility: hidden;
+}
+.bsc-status.bsc-status-active { visibility: visible; }
+/* the vis.js manipulation bar is replaced by the toolbar above the diagram */
+.bsc-editor .vis-manipulation, .bsc-editor .vis-edit-mode, .bsc-editor .vis-close,
+.bsc-editor .network-popUp { display: none !important; }
+.bsc-diagram .vis-network { border: 1px solid rgba(11, 11, 11, 0.08); border-radius: 6px; background: #ffffff; }
+.bsc-diagram div.vis-tooltip { font-size: 0.8rem; }
+
+/* legend items keep swatch and label together */
+.bsc-legend-item { display: inline-flex; align-items: center; white-space: nowrap; }
+
+/* parameter value + "unknown" check box on one line */
+.bsc-param-row .bsc-param-value { flex: 1 1 140px; max-width: 220px; min-width: 120px; }
+.bsc-param-row .bsc-param-unknown { flex: 0 0 auto; }
+.bsc-param-row .bsc-param-unknown .form-check-label, .bsc-param-row .bsc-param-unknown label { white-space: nowrap; }
+.bsc-param-row .bsc-param-unknown .shiny-input-container { width: auto !important; }
+.bsc-param-row .bsc-param-value { max-width: 240px; }

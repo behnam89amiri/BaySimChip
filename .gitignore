@@ -1,0 +1,28 @@
+# R and RStudio
+.Rhistory
+.Rapp.history
+.RData
+.RDataTmp
+.Ruserdata
+.Rproj.user/
+*.Rproj
+Rplots.pdf
+
+# Shiny deployment
+rsconnect/
+
+# outputs of new runs of the paper code (the run behind the paper is output/v1.0.0)
+paper_code/output/*
+!paper_code/output/v1.0.0/
+
+# screenshots of the app (tools/make_screenshots.mjs)
+screenshots/
+.chrome-profile/
+
+# operating system and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*~

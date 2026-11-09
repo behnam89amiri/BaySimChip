@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use this software or these data, please cite the paper and this archived version."
+title: "BaySimChip: R Shiny app and analysis code for 'Quantitative modeling of platform-specific processes to improve pharmacokinetic studies in organ-on-a-chip systems'"
+version: 1.0.0
+type: software
+authors:
+  - family-names: Amiri
+    given-names: Behnam
+    orcid: "https://orcid.org/0000-0001-6824-2741"
+    affiliation: "Bayer AG, Berlin, Germany (present address: ESQlabs GmbH)"
+  - family-names: Vural
+    given-names: Özlem
+    affiliation: "Bayer AG, Berlin, Germany"
+  - family-names: Raschke
+    given-names: Marian
+    affiliation: "Bayer AG, Berlin, Germany"
+  - family-names: Steger-Hartmann
+    given-names: Thomas
+    affiliation: "Bayer AG, Berlin, Germany"
+  - family-names: Reichel
+    given-names: Andreas
+    affiliation: "Bayer AG, Berlin, Germany"
+license: GPL-3.0-or-later
+abstract: >-
+  BaySimChip is an R Shiny app for compartmental pharmacokinetic models of
+  organ-on-a-chip systems: build the model of a chip, define the experimental
+  conditions (dosing, sampling, media exchange, evaporation, non-specific
+  binding), simulate concentration-time profiles and estimate parameters such
+  as intrinsic clearance and permeability from measured data. The repository
+  also contains the R code, the processed concentration-time data and the
+  results that reproduce the analyses and figures of the paper.
+keywords:
+  - organ-on-a-chip
+  - microphysiological systems
+  - pharmacokinetics
+  - compartmental modelling
+  - evaporation
+  - sampling
+  - non-specific binding
+  - parameter estimation
+  - R Shiny
+# To be completed when the DOI of the article is known (see PUBLISH_STEPS.md):
+# preferred-citation:
+#   type: article
+#   title: "Quantitative modeling of platform-specific processes to improve pharmacokinetic studies in organ-on-a-chip systems"
+#   authors:
+#     - family-names: Amiri
+#       given-names: Behnam
+#     - family-names: Vural
+#       given-names: Özlem
+#     - family-names: Raschke
+#       given-names: Marian
+#     - family-names: Steger-Hartmann
+#       given-names: Thomas
+#     - family-names: Reichel
+#       given-names: Andreas
+#   journal: "Lab on a Chip"
+#   year: 2026
+#   doi: "10.1039/ARTICLE-DOI"

@@ -1,0 +1,42 @@
+{
+  "title": "BaySimChip: R Shiny app and analysis code for 'Quantitative modeling of platform-specific processes to improve pharmacokinetic studies in organ-on-a-chip systems'",
+  "version": "1.0.0",
+  "upload_type": "software",
+  "description": "<p>BaySimChip is an R Shiny app for compartmental pharmacokinetic models of organ-on-a-chip systems: build the model of a chip, define the experimental conditions (dosing, sampling, media exchange, evaporation, non-specific binding), simulate concentration-time profiles and estimate parameters such as intrinsic clearance and permeability from measured data. The repository also contains the R code, the processed concentration-time data and the results that reproduce the analyses and figures of the paper 'Quantitative modeling of platform-specific processes to improve pharmacokinetic studies in organ-on-a-chip systems' (submitted for publication). Code: GPL-3.0-or-later; data: CC BY 4.0.</p>",
+  "creators": [
+    {
+      "name": "Amiri, Behnam",
+      "affiliation": "Bayer AG, Berlin, Germany (present address: ESQlabs GmbH)",
+      "orcid": "0000-0001-6824-2741"
+    },
+    {
+      "name": "Vural, Özlem",
+      "affiliation": "Bayer AG, Berlin, Germany"
+    },
+    {
+      "name": "Raschke, Marian",
+      "affiliation": "Bayer AG, Berlin, Germany"
+    },
+    {
+      "name": "Steger-Hartmann, Thomas",
+      "affiliation": "Bayer AG, Berlin, Germany"
+    },
+    {
+      "name": "Reichel, Andreas",
+      "affiliation": "Bayer AG, Berlin, Germany"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "access_right": "open",
+  "keywords": [
+    "organ-on-a-chip",
+    "microphysiological systems",
+    "pharmacokinetics",
+    "compartmental modelling",
+    "evaporation",
+    "sampling",
+    "non-specific binding",
+    "parameter estimation",
+    "R Shiny"
+  ]
+}

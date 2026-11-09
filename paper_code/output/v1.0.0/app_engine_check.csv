@@ -1,0 +1,7 @@
+"condition","quantity","app_engine","paper_code","abs_diff","status"
+"w/ evaporation","liver Cmax",0.0473500292165904,0.0473500292165904,3.46944695195361e-17,"ok"
+"w/ evaporation","liver Tmax (h)",32.65,32.65,0,"ok"
+"w/ evaporation","max |difference| of liver profile (µM)",NA,NA,5.03069808033274e-17,"ok"
+"w/o evaporation","liver Cmax",0.040688381645696,0.040688381645696,1.38777878078145e-17,"ok"
+"w/o evaporation","liver Tmax (h)",29.69,29.69,0,"ok"
+"w/o evaporation","max |difference| of liver profile (µM)",NA,NA,5.03069808033274e-17,"ok"

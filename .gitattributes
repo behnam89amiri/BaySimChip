@@ -1,0 +1,3 @@
+# store all files exactly as they are (no line-ending conversion), so that the
+# result files in paper_code/output/v1.0.0 stay byte-identical
+* -text
