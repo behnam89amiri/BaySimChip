@@ -13,6 +13,23 @@
 library(shiny)
 library(bslib)
 
+# Units such as µM need a UTF-8 locale. R uses one by default (on Windows since
+# R 4.2), but an invalid setting (e.g. LC_ALL=C.UTF-8 on Windows) makes R fall
+# back to the "C" locale: µ is then garbled and some tables stay empty. In that
+# case the character handling is switched to UTF-8 while the app runs.
+if (!isTRUE(l10n_info()[["UTF-8"]])) {
+  old_ctype <- Sys.getlocale("LC_CTYPE")
+  for (loc in c(".UTF-8", "C.UTF-8", "en_US.UTF-8")) {
+    if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
+  }
+  if (isTRUE(l10n_info()[["UTF-8"]])) {
+    onStop(function() Sys.setlocale("LC_CTYPE", old_ctype))
+  } else {
+    warning("R does not run in a UTF-8 locale: units such as uM may be shown ",
+            "wrongly and some tables may stay empty.", call. = FALSE)
+  }
+}
+
 app_dir <- normalizePath(getwd())   # runApp() sets the working dir to the app folder
 options(baysimchip.app_dir = app_dir)
 
@@ -51,20 +68,6 @@ ui <- page_navbar(
   nav_item(uiOutput("project_badge"))
 )
 
-# Rendering the page (theme and component styles via bslib/sass) takes 1-2 s and
-# blocks the R process for every user, so it is rendered once and the HTML is
-# reused for later page loads (normal rendering if Shiny's internals change).
-ui_cached <- local({
-  html <- NULL
-  function(req) {
-    if (is.null(html)) {
-      html <<- tryCatch(shiny:::renderPage(ui, 0, FALSE), error = function(e) NULL)
-      if (is.null(html)) return(ui)
-    }
-    shiny:::httpResponse(200L, content = html)
-  }
-})
-
 server <- function(input, output, session) {
   start <- getOption("baysimchip.start_example", "CNBio_gut_liver")
   p0 <- tryCatch(bsc_load_example(start), error = function(e) bsc_new_project())
@@ -85,4 +88,9 @@ server <- function(input, output, session) {
   })
 }
 
-shinyApp(ui_cached, server)
+# Do not cache the rendered page: rendering also registers the web paths of the
+# page's JavaScript and CSS files. The DT and plotly widgets register the jQuery
+# of the jquerylib package under the same path as Shiny's jQuery ("jquery-3.6.0")
+# but with another file name, so a cached page would ask for a file that is no
+# longer served (404; the app then does not react for new visitors).
+shinyApp(ui, server)
